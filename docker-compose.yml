@@ -14,23 +14,23 @@ services:
       elasticsearch:
         ipv4_address: 10.0.0.20
 
-  # logstash:
-  #   build: ./logstash
-  #   volumes:
-  #     - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
-  #     - ./logstash/lib:/var/lib/logstash
-  #     - ./logstash/log:/var/log/logstash
-  #   ports:
-  #     - "5000:5000/tcp"
-  #     - "5000:5000/udp"
-  #     - "9600:9600"
-  #   environment:
-  #     LS_JAVA_OPTS: "-Xmx256m -Xms256m"
-  #   networks:
-  #     - elk
-  #   depends_on:
-  #     - elasticsearch
-  #     - kibana
+  logstash:
+    build: ./logstash
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/lib:/var/lib/logstash
+      - ./logstash/log:/var/log/logstash
+    ports:
+      - "5000:5000/tcp"
+      - "5000:5000/udp"
+      - "9600:9600"
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      - elasticsearch
+    depends_on:
+      - elasticsearch
+      - kibana
 
   kibana:
     build: ./kibana
