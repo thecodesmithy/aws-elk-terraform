@@ -13,7 +13,9 @@ services:
     networks:
       elasticsearch:
         ipv4_address: 10.0.0.20
-
+    environment:
+      - discovery.type=single-node
+  
   logstash:
     build: ./logstash
     volumes:
@@ -27,7 +29,8 @@ services:
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
     networks:
-      - elasticsearch
+      elasticsearch:
+        ipv4_address: 10.0.0.10
     depends_on:
       - elasticsearch
       - kibana
