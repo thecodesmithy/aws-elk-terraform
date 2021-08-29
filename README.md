@@ -26,7 +26,7 @@ docker-compose up --build
 
 And that _should_ be it... if you get anything about a complaint that your machine can't find Docker or docker-compose then you've got bigger problems I'm afraid. Not to worry too much though, Chocolatey - or brew if you used a _proper_ computer instead of those consumer-friendly "Windows" things you've got there, it should be a simple case of ~~`brew install docker`~~ sorry, I meant `choco install docker-for-windows`.
 
-*ProTip* | when using the obvious operating system here - apart from running Docker on i guess... - you'll want to prep your Windows Subsystem for Linux (WSL) by running  `wsl -d docker-desktop sysctl -w vm.max_map_count=262144`.
+ProTip | when using the obviously superior operating system here - apart for running Docker on i guess... - you'll want to prep your Windows Subsystem for Linux (WSL) by running  `wsl -d docker-desktop sysctl -w vm.max_map_count=262144`.
 
 ## It worked first time!!
 
