@@ -29,8 +29,7 @@ services:
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
     networks:
-      elasticsearch:
-        ipv4_address: 10.0.0.10
+      - elasticsearch
     depends_on:
       - elasticsearch
       - kibana
@@ -58,3 +57,5 @@ networks:
       driver: default
       config:
         - subnet: 10.0.0.0/16
+
+
